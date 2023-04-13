@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Beveg figur med piltaster</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      #figur {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-1%, -1%);
+        width: 50%;
+        height: 50%;
+        max-width: 100px;
+        max-height: 100px;
+        background-color: red;
+        text-align: center;
+      }
+      p {
+        margin-top: 30px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="figur"><p>Matija</p></div>
+    <script>
+      var figur = document.getElementById('figur');
+      var x = 50;
+      var y = 50;
+      document.addEventListener('keydown', function (event) {
+        if (event.code === 'ArrowUp') {
+          y -= 10;
+        }
+        if (event.code === 'ArrowDown') {
+          y += 10;
+        }
+        if (event.code === 'ArrowLeft') {
+          x -= 10;
+        }
+        if (event.code === 'ArrowRight') {
+          x += 10;
+        }
+        if (y < 0) {
+          y = 0;
+        }
+        if (y > window.innerHeight - figur.offsetHeight) {
+          y = window.innerHeight - figur.offsetHeight;
+        }
+        if (x < 0) {
+          x = 0;
+        }
+        if (x > window.innerWidth - figur.offsetWidth) {
+          x = window.innerWidth - figur.offsetWidth;
+        }
+        figur.style.top = y + 'px';
+        figur.style.left = x + 'px';
+      });
+      // Sett grensene basert på skjermoppløsningen
+      window.onload = function () {
+        var maxX = window.innerWidth - figur.offsetWidth;
+        var maxY = window.innerHeight - figur.offsetHeight;
+        if (maxX > 1915) {
+          maxX = 1915;
+        }
+        if (maxY > 1075) {
+          maxY = 1075;
+        }
+        if (x > maxX) {
+          x = maxX;
+        }
+        if (y > maxY) {
+          y = maxY;
+        }
+      };
+    </script>
+  </body>
+</html>
