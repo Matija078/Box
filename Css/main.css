@@ -1,7 +1,10 @@
-.firkant {
+#firkant1 {
   width: 100px;
   height: 100px;
   background-color: blue;
   position: absolute;
-  transform: translate(-50%, -50%);
+  top: 50px;
+  left: 50px;
+  text-align: center;
+  color: white;
 }
