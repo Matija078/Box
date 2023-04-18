@@ -1,21 +1,7 @@
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-#figur {
+.firkant {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-1%, -1%);
-  width: 50%;
-  height: 50%;
-  max-width: 100px;
-  max-height: 100px;
-  background-color: red;
-  text-align: center;
-}
-p {
-  margin-top: 30px;
-  color: white;
+  transform: translate(-50%, -50%);
 }
